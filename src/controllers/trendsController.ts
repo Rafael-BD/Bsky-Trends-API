@@ -5,12 +5,14 @@ import { sanitizeQueryParams } from "../../shared/utils/sanitizeInput.ts";
 export async function getTrends(ctx: Context) {
     try {
         const sanitizedQueryParams = sanitizeQueryParams(ctx);
-        const { lang="pt" } = sanitizedQueryParams;
-        const trend = await fetchTrends(lang);
-        ctx.response.body = trend;
+        let { lang = ["pt"] } = sanitizedQueryParams;
+        if (typeof lang === 'string') {
+            lang = [lang];
+        }
+        const trends = await fetchTrends(lang);
+        ctx.response.body = trends;
     } catch (error) {
         ctx.response.status = 500;
-        ctx.response.body = { error: "Error fetching plugins: " + error.message };
+        ctx.response.body = { error: "Error fetching trends: " + error.message };
     }
 }
-
