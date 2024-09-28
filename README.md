@@ -26,12 +26,7 @@ curl -X GET "https://bsky-trends.deno.dev/trend?lang=en,pt"
 
 #### Example Response
 
-```json
-{
-    "en": {"words", "phrases", "hashtags", "globalWords"},
-    "pt": {"words", "phrases", "hashtags", "globalWords"}
-}
-```
+<img src="assets/image.png" alt="Example Request" width="35%">
 
 ## Rate Limiting
 
