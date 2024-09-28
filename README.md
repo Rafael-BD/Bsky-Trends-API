@@ -21,7 +21,7 @@ This endpoint returns topic trends for the specified languages.
 #### Example Request
 
 ```bash
-curl -X GET "https://bsky-trends.deno.dev/trends?lang=en,pt"
+curl -X GET "https://bsky-trends.deno.dev/trend?lang=en,pt"
 ```
 
 #### Example Response
